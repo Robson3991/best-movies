@@ -10,6 +10,7 @@ const colors = css`
     --color-darkgrey: #898989;
 
     --color-primary: #33576f;
+    --color-primary-rgb: 49, 179, 198;
     --color-primary-light: #31b3c6;
 
     --color-secondary: #fbb04c;

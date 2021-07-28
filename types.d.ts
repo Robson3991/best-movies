@@ -5,7 +5,7 @@ type LabelT = {
 type MovieImageT = {
   label: string;
   attributes: {
-    height: number;
+    height: string;
   };
 };
 
@@ -38,13 +38,13 @@ type MovieLinkT = {
 type MovieID = {
   label: string;
   attributes: {
-    "im:id": string;
+    'im:id': string;
   };
 };
 
 type MovieCategory = {
   attributes: {
-    "im:id": string;
+    'im:id': string;
     term: string;
     scheme: string;
     label: string;
@@ -59,16 +59,16 @@ type MovieReleaseDateT = {
 };
 
 export type MovieT = {
-  "im:name": LabelT;
-  "im:image": MovieImageT[];
+  'im:name': LabelT;
+  'im:image': MovieImageT[];
   summary: LabelT;
-  "im:price": MoviePriceT;
-  "im:contentType": MovieContentTypeT;
+  'im:price': MoviePriceT;
+  'im:contentType': MovieContentTypeT;
   rights: LabelT;
   title: LabelT;
   link: Array<{ attributes: MovieLinkT }>;
   id: MovieID;
-  "im:artists": LabelT;
+  'im:artist': LabelT;
   category: MovieCategory;
-  "im:releaseDate": MovieReleaseDateT;
+  'im:releaseDate': MovieReleaseDateT;
 };

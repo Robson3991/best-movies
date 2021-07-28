@@ -1,15 +1,15 @@
-import axios from "axios";
-import { useQuery } from "react-query";
+import axios from 'axios';
+import { useQuery } from 'react-query';
 
-const getData = async () => {
+export const getMovies = async () => {
   const { data } = await axios.get(
-    `https://itunes.apple.com/us/rss/topmovies/limit=100/json`
+    `https://itunes.apple.com/us/rss/topmovies/limit=100/json`,
   );
   return data;
 };
 
 function useMovies() {
-  return useQuery(["movies"], () => getData());
+  return useQuery(['movies'], () => getMovies());
 }
 
 export default useMovies;
