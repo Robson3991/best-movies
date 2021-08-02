@@ -4,6 +4,18 @@ import Loader from 'components/atoms/Loader';
 import { useAppDispatch } from 'store/hooks';
 import { moviesDataChange } from 'store/slices/movies';
 import Movies from 'components/organism/Movies';
+import Container from 'components/atoms/Container';
+import styled from 'styled-components';
+
+const StyledContainer = styled(Container)`
+  .infinite-scroll-component__outerdiv,
+  .infinite-scroll-component {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 export default function Home() {
   const { data, error, isFetching } = useMovies();
@@ -20,8 +32,8 @@ export default function Home() {
   if (error) return <p>There was a problem while fetching data</p>;
 
   return (
-    <div>
+    <StyledContainer>
       <Movies />
-    </div>
+    </StyledContainer>
   );
 }
