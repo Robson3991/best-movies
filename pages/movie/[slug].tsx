@@ -27,11 +27,23 @@ export default function Movie({ movieData }: MovieProps) {
   );
 }
 
-export async function getServerSideProps({ params }: any) {
+export async function getServerSideProps({ req, params }: any) {
+  const env = process.env.NODE_ENV;
+  let protocol = '';
+
+  if (env == 'development') {
+    protocol = 'http';
+  } else if (env == 'production') {
+    protocol = 'https';
+  }
+
   try {
-    const { data } = await axios.post('http://localhost:3000/api/get-movie', {
-      movieID: params.slug,
-    });
+    const { data } = await axios.post(
+      `${protocol}://${req.headers.host}/api/get-movie`,
+      {
+        movieID: params.slug,
+      },
+    );
 
     return {
       props: { movieData: data },
