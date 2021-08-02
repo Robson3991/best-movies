@@ -4,6 +4,7 @@ export const Wrapper = styled.a`
   display: flex;
   align-items: center;
   border: 1px solid rgba(var(--color-black-rgb), 0.2);
+  width: 100%;
   max-width: 800px;
   cursor: pointer;
   transition: background-color var(--transition);

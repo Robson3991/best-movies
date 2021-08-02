@@ -1,5 +1,11 @@
 import axios from 'axios';
 import { MovieT } from 'types';
+import styled from 'styled-components';
+
+const Summary = styled.p`
+  text-align: center;
+  margin-bottom: 50px;
+`;
 
 interface MovieProps {
   movieData: MovieT;
@@ -16,7 +22,7 @@ export default function Movie({ movieData }: MovieProps) {
         {title.label} - {category.attributes.label}
       </h1>
       <br />
-      <p>{summary.label}</p>
+      <Summary>{summary.label}</Summary>
     </>
   );
 }
