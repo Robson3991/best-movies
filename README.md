@@ -1,6 +1,6 @@
 # React best movies list
 
-App takes data from iTunes, and show best 100 movies.
+App takes data from iTunes, and show best 100 movies.\
 Project was deployed on vercel - https://best-movies-hazel.vercel.app/
 
 ## Used technologies:
